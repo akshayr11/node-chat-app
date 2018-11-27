@@ -11,13 +11,18 @@ const server = http.createServer(app);
 const io = socketIO(server);
 io.on('connection', socket => {
 	console.log(`New user connected`);
-	socket.emit('newMessage', {
-		from: 'server',
-		text: 'Message from Server'
-	});
+	// socket.emit('newMessage', {
+	// 	from: 'server',
+	// 	text: 'Message from Server'
+	// });
 
 	socket.on('createMessage', message => {
 		console.log('From Client', message);
+		io.emit('newMessage', {
+			from: message.from,
+			text: message.text,
+			createdAt: new Date().getTime()
+		});
 	});
 
 	socket.on('disconnect', () => {
