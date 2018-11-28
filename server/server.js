@@ -28,7 +28,7 @@ io.on('connection', socket => {
 		createdAt: new Date().getTime()
 	});
 
-	socket.on('createMessage', message => {
+	socket.on('createMessage', (message, callback) => {
 		// io.emit emits event to all connection including to the user who sent the event
 		io.emit('newMessage', {
 			// message (object) sent from client by emitting createMessage event
@@ -36,6 +36,7 @@ io.on('connection', socket => {
 			text: message.text,
 			createdAt: new Date().getTime()
 		});
+		callback({text: 'This is from the server'});
 	});
 
 	socket.on('disconnect', () => {
