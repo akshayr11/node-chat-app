@@ -11,18 +11,36 @@ const server = http.createServer(app);
 const io = socketIO(server);
 io.on('connection', socket => {
 	console.log(`New user connected`);
-	// socket.emit('newMessage', {
-	// 	from: 'server',
-	// 	text: 'Message from Server'
-	// });
+
+	// Emit a message
+	socket.emit('newMessage', {
+		// socket.emit Emits event to the connected socket (single)
+		from: 'Admin',
+		text: 'Welcome to the chat app!!',
+		createdAt: new Date().getTime()
+	});
+
+	// Broadcast a message
+	socket.broadcast.emit('newMessage', {
+		// socket.broadcast.emit emits event to all connection excluding to the socket who sent the event
+		from: 'Admin',
+		text: 'New User joined',
+		createdAt: new Date().getTime()
+	});
 
 	socket.on('createMessage', message => {
-		console.log('From Client', message);
+		// io.emit emits event to all connection including to the user who sent the event
 		io.emit('newMessage', {
+			// message (object) sent from client by emitting createMessage event
 			from: message.from,
 			text: message.text,
 			createdAt: new Date().getTime()
 		});
+		// socket.broadcast.emit('newMessage', {
+		// from: message.from,
+		// text: message.text,
+		// createdAt: new Date().getTime()
+		// });
 	});
 
 	socket.on('disconnect', () => {
