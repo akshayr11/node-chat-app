@@ -57,10 +57,9 @@ ul {
 .btn:link,
 .btn:visited {
 	font-family: 'OmnesRegular', 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 1.6rem;
 	text-transform: uppercase;
 	text-decoration: none;
-	height: 4.5rem;
 	padding: 1rem 1.6rem;
 	display: inline-block;
 	border-radius: 0.5rem;
@@ -102,9 +101,7 @@ input[type='email'] {
 	border-radius: 3px;
 	padding: 2rem 1rem;
 	outline: none;
-	height: 2.8rem;
-	margin-bottom: 0;
-	border-bottom: 1px solid;
+	height: 3rem;
 	box-shadow: none;
 	color: #444;
 	background-color: #fff;
@@ -115,7 +112,7 @@ input[type='email'] {
 .chat {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 .chat__sidebar {
 	flex-basis: 20%;
@@ -147,7 +144,7 @@ input {
 	flex-basis: 25%;
 	display: flex;
 	justify-content: flex-end;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 
 /* util */
