@@ -102,14 +102,21 @@ input[type='email'] {
 	background-color: #fff;
 	font-family: 'OmnesRegular', 'Roboto', sans-serif;
 }
+/* Typography */
+.heading-2 {
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: #f9f7f6;
+}
 
+/* Main */
 .chat {
 	width: 100%;
 }
 .chat__sidebar {
 	display: inline-block;
 	width: 20%;
-	background: black;
+	background: #584adc;
 	height: 100vh;
 	position: fixed;
 }

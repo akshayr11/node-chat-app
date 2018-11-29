@@ -11,9 +11,10 @@ socket.on('connect', function() {
 socket.on('disconnect', function() {
 	console.log('Disonnected from the server');
 });
-document.getElementById('message-form').addEventListener('submit', function(event) {
+const messageForm = document.getElementById('message-form');
+messageForm.addEventListener('submit', function(event) {
 	event.preventDefault();
-	var message = document.getElementById('message-form').elements[0].value;
+	var message = messageForm.elements[0].value;
 	socket.emit(
 		'createMessage',
 		{
@@ -21,12 +22,11 @@ document.getElementById('message-form').addEventListener('submit', function(even
 			text: message
 		},
 		function(data) {
-			document.getElementById('message-form').elements[0].value = '';
+			messageForm.elements[0].value = '';
 		}
 	);
 });
 
-// var locationButton = document.getElementById('send-location');
 function getGeoLocation() {
 	if ('geolocation' in navigator) {
 		/* geolocation is available */
@@ -38,11 +38,11 @@ function getGeoLocation() {
 				});
 			},
 			function() {
-				return alert('Unable to fetch location');
+				alert('Unable to fetch location');
 			}
 		);
 	} else {
-		return alert('Geolocation not supported by your browser');
+		alert('Geolocation not supported by your browser');
 		/* geolocation IS NOT available */
 	}
 }
