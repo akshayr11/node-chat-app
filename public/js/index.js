@@ -2,9 +2,9 @@ var socket = io();
 socket.on('connect', function() {
 	console.log('Connected to the server');
 	socket.on('newMessage', function(message) {
-		const chatBox = document.querySelector('ul');
-		const newMessage = document.createElement('li');
-		newMessage.textContent = `${message.from}: ${message.text} `;
+		var chatBox = document.querySelector('ul');
+		var newMessage = document.createElement('li');
+		newMessage.textContent = message.from + ':' + message.text;
 		chatBox.appendChild(newMessage, chatBox.firstElementChild);
 	});
 });
@@ -13,7 +13,7 @@ socket.on('disconnect', function() {
 });
 document.getElementById('message-form').addEventListener('submit', function(event) {
 	event.preventDefault();
-	const message = document.getElementById('message-form').elements[0].value;
+	var message = document.getElementById('message-form').elements[0].value;
 	socket.emit(
 		'createMessage',
 		{
