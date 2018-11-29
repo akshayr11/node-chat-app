@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-size: 16px;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'OmnesRegular', 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	color: var(--color-grey-dark-2);
+	background-image: linear-gradient(to right bottom, var(--color-white), var(--color-snow));
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+
+/* Importing fonts */
+@font-face {
+	font-family: OmnesLight;
+	src: url('../assets/fonts/Light.ttf');
+}
+
+@font-face {
+	font-family: OmnesMedium;
+	src: url('../assets/fonts/Medium.ttf');
+}
+
+@font-face {
+	font-family: OmnesRegular;
+	src: url('../assets/fonts/Regular.ttf');
+}
+
+/* anchor tag and ul tag reset */
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	font-family: 'OmnesRegular', 'Roboto', sans-serif;
+}
+
+ul {
+	list-style: none;
+	font-family: 'OmnesRegular', 'Roboto', sans-serif;
+}
+
+/* Buttons */
+.btn,
+.btn:link,
+.btn:visited {
+	font-family: 'OmnesRegular', 'Roboto', sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	height: 4.5rem;
+	padding: 1rem 1.6rem;
+	display: inline-block;
+	border-radius: 0.5rem;
+	transition: all 0.2s;
+	position: relative;
+	outline: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+	background: transparent;
+}
+
+.btn:active,
+.btn:focus {
+	outline: none;
+	transform: translateY(-1px);
+	box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+}
+
+.btn--blue {
+	background-color: #66a1e7;
+	color: #ffffff;
+}
+.btn--blue:after {
+	background-color: #584adc;
+}
+
+/* Input Boxes */
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+input[type='date'],
+input[type='email'] {
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	padding: 2rem 1rem;
+	outline: none;
+	height: 2.8rem;
+	margin-bottom: 0;
+	border-bottom: 1px solid;
+	box-shadow: none;
+	color: #444;
+	background-color: #fff;
+	font-family: 'OmnesRegular', 'Roboto', sans-serif;
+}
+
+/* Main Styles */
+.chat {
+	display: flex;
+	flex-direction: row;
+}
+.chat__sidebar {
+	flex: 20;
+	height: 100vh;
+	position: sticky;
+	background-color: #444;
+}
+.chat__main {
+    margin-top: auto;
+    padding: 1rem;
+	flex: 70;
+}
+.chat__form {
+	display: flex;
+	flex-direction: row;
+}
+.chat__form,
+input {
+	flex: 80;
+}
+.chat__form,
+button {
+    flex: 10;
+    height: auto;
+}
