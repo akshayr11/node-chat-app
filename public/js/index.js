@@ -33,6 +33,7 @@ document.getElementById('message-form').addEventListener('submit', function(even
 		},
 		function(data) {
 			console.log('Got It', data);
+			// console.log(document.getElementById('message-form').elements[0]);
 		}
 	);
 });
