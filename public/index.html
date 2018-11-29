@@ -15,9 +15,9 @@
 		</div>
 
 		<div class="chat__main">
-			<ol id="messages" class="chat__messages"></ol>
+			<ul id="messages" class="chat__messages"></ul>
 			<div class="chat__footer">
-				<form #val id="message-form" class="chat__form"><input name="message" type="text" placeholder="Message" /> <button class="btn btn--blue">Send</button></form>
+				<form #val id="message-form" class="chat__form" autocomplete="off"><input name="message" type="text" placeholder="Message" /> <button class="btn btn--blue">Send</button></form>
 				<button id="send-location" onclick="getGeoLocation()" class="btn">Send Location</button>
 			</div>
 		</div>
