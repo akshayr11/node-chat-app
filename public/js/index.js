@@ -32,8 +32,7 @@ document.getElementById('message-form').addEventListener('submit', function(even
 			text: message
 		},
 		function(data) {
-			console.log('Got It', data);
-			// console.log(document.getElementById('message-form').elements[0]);
+			document.getElementById('message-form').elements[0].value = '';
 		}
 	);
 });
