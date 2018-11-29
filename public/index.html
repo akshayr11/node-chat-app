@@ -8,22 +8,26 @@
 		<link rel="stylesheet" href="css/styles.css" />
 		<title>Document</title>
 	</head>
-	<body class="chat">
-		<div class="chat__sidebar">
-			<h3>Active Users</h3>
-			<div id="users"></div>
-		</div>
+	<body>
+		<div class="chat">
+			<div class="chat__sidebar">
+				<h3>Active Users</h3>
+				<div id="users"></div>
+			</div>
 
-		<div class="chat__main">
-			<ul id="messages" class="chat__messages"></ul>
-			<div class="chat__footer">
-				<form #val id="message-form" class="chat__form" autocomplete="off">
-					<input name="message" type="text" placeholder="Message" />
-					<div class="chat__buttons--container"><button type="submit" class="btn btn--blue">Send</button> <button class="sm-margin-left btn" onclick="getGeoLocation()">Send Location</button></div>
-				</form>
+			<div class="chat__main">
+				<div id="messages" class="chat__messages"></div>
+				<div class="chat__footer">
+					<form #val id="message-form" class="chat__form" autocomplete="off">
+						<input name="message" type="text" placeholder="Message" />
+						<div class="chat__buttons--container">
+							<button type="submit" class="btn btn--blue">Send</button>
+							<button class="sm-margin-left btn" onclick="getGeoLocation()">Send Location</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="./js/index.js"></script>
 	</body>
