@@ -11,6 +11,7 @@
 		<!-- <h1>Welcome to the ChatApp!!</h1> -->
 		<ol id="messages"></ol>
 		<form #val id="message-form"><input name="message" type="text" placeholder="Message" /> <button>Send</button></form>
+		<button id="send-location" onclick="getGeoLocation()">Send Location</button>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="./js/index.js"></script>
