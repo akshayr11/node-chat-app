@@ -2,8 +2,8 @@ var socket = io();
 socket.on('connect', function() {
 	console.log('Connected to the server');
 	socket.on('newMessage', function(message) {
-		var chatBox = document.getElementById('messages');
-		var newMessage = document.createElement('div');
+		var chatBox = document.querySelector('ul');
+		var newMessage = document.createElement('li');
 		newMessage.textContent = message.from + ':' + message.text;
 		chatBox.appendChild(newMessage, chatBox.firstElementChild);
 	});
