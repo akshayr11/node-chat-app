@@ -4,7 +4,7 @@ socket.on('connect', function() {
 	socket.on('newMessage', function(message) {
 		var chatBox = document.querySelector('ul');
 		var newMessage = document.createElement('li');
-		newMessage.textContent = message.from + ':' + message.text;
+		newMessage.textContent = message.from + " " + moment(message.createdAt).format('h:mma') + ': ' + message.text;
 		chatBox.appendChild(newMessage, chatBox.firstElementChild);
 	});
 });
@@ -27,22 +27,22 @@ messageForm.addEventListener('submit', function(event) {
 	);
 });
 
-function getGeoLocation() {
-	if ('geolocation' in navigator) {
-		/* geolocation is available */
-		navigator.geolocation.getCurrentPosition(
-			function(position) {
-				socket.emit('createLocationMessage', {
-					latitude: position.coords.latitude,
-					longitude: position.coords.longitude
-				});
-			},
-			function() {
-				alert('Unable to fetch location');
-			}
-		);
-	} else {
-		alert('Geolocation not supported by your browser');
-		/* geolocation IS NOT available */
-	}
-}
+// function getGeoLocation() {
+// 	if ('geolocation' in navigator) {
+// 		/* geolocation is available */
+// 		navigator.geolocation.getCurrentPosition(
+// 			function(position) {
+// 				socket.emit('createLocationMessage', {
+// 					latitude: position.coords.latitude,
+// 					longitude: position.coords.longitude
+// 				});
+// 			},
+// 			function() {
+// 				alert('Unable to fetch location');
+// 			}
+// 		);
+// 	} else {
+// 		alert('Geolocation not supported by your browser');
+// 		/* geolocation IS NOT available */
+// 	}
+// }
